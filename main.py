@@ -20,10 +20,19 @@ def alarm(seconds):
         print(
             f"{CLEAR_AND_RETURN}Alarm will sound in: {minutes_left:02d}:{seconds_left:02d}")
 
-    playsound('alarm.mp3')
+    if sound == 1:
+        playsound('alarm 1.mp3')
+    elif sound == 2:
+        playsound('alarm 2.mp3')
+    elif sound == 3:
+        playsound('alarm 3.mp3')
+    else:
+        playsound('alarm 4.mp3')
 
 
 minutes = int(input("How many minutes to wait: "))
 seconds = int(input("How many seconds to wait: "))
 total_seconds = minutes + seconds
+sound = int(input("What alarm would you like (1-4): "))
+
 alarm(total_seconds)
